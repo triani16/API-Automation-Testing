@@ -18,11 +18,11 @@
 - Install the project
 
 ```
-  1. supertest
+  1. supertest :
     npm install supertest
-  2. mocha
+  2. mocha :
     npm install mocha
-  3. chai
+  3. chai :
     npm install chai
 ```
 
