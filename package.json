@@ -1,0 +1,22 @@
+{
+  "name": "sanber-47-api",
+  "version": "1.0.0",
+  "description": "api testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --",
+    "html-report:api": "open ./mochawesome-report/mochawesome.html"
+  },
+  "keywords": [
+    "api",
+    "automation"
+  ],
+  "author": "tri",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "supertest": "^6.3.3"
+  }
+}

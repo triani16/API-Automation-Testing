@@ -1,0 +1,351 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-08-12T03:18:18.730Z",
+    "end": "2023-08-12T03:18:24.533Z",
+    "duration": 5803,
+    "testsRegistered": 10,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "78287927-3644-4092-95e1-b4fa31b96394",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "efed8e92-6ccc-4432-8e71-70dbff2c2721",
+          "title": "create-user",
+          "fullFile": "C:\\Users\\Triani_118217\\Documents\\Triani\\Sanber-47-API\\test\\suite\\user.suite.js",
+          "file": "\\test\\suite\\user.suite.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success create a new user",
+              "fullTitle": "create-user Success create a new user",
+              "timedOut": false,
+              "duration": 912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\n// create user\nconst payload = {\n    \"name\": \"lala2\",\n    \"email\": \"lala2@example.com\",\n    \"password\": \"lala2222@\" \n}\nconst response = await createUser(payload,token)\n       \n console.log((await  response).body);\n console.log((await  response).status);\n//assert\nexpect((await response).status).to.equal(201);\nexpect((await response).body.data.name).to.equal(payload.name); // data driven testing\nexpect((await response).body.message).to.equal(\"User berhasil ditambahkan\");",
+              "err": {},
+              "uuid": "5692ca22-845a-4b24-98c6-eebbf1237f14",
+              "parentUUID": "efed8e92-6ccc-4432-8e71-70dbff2c2721",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed create user",
+              "fullTitle": "create-user Failed create user",
+              "timedOut": false,
+              "duration": 657,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken ()\nconst payload = {\n    \"name\": \"lala2\",\n    \"email\": \"lala2\",\n    \"password\": \"lala2222@\"    \n}\nconst response = await createUser(payload,token)\n// console.log((await  response).status);\n//  console.log((await  response).body)\n//ASSERTION\nexpect((await response).status).to.equal(400);",
+              "err": {},
+              "uuid": "341485a9-2f55-455a-bab5-0f3652483c5a",
+              "parentUUID": "efed8e92-6ccc-4432-8e71-70dbff2c2721",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5692ca22-845a-4b24-98c6-eebbf1237f14",
+            "341485a9-2f55-455a-bab5-0f3652483c5a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1569,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "699da985-041e-41e6-a117-be19c4090557",
+          "title": "update-user",
+          "fullFile": "C:\\Users\\Triani_118217\\Documents\\Triani\\Sanber-47-API\\test\\suite\\user.suite.js",
+          "file": "\\test\\suite\\user.suite.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success update user",
+              "fullTitle": "update-user Success update user",
+              "timedOut": false,
+              "duration": 522,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\nconst userId = \"a33a7900-a8b3-465f-89e3-e78fc0e30d60\"\nconst payload = {\n        \"name\": \"lulu\",\n        \"email\": \"lulu@example.com\"\n    }\n    \n\n// create user\nconst response = await updateUser(userId,token,payload)\n console.log((await  response).body);\nconsole.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(200);\nexpect((await response).body.data.name).to.equal(\"lulu\"); \nexpect((await response).body.message).to.equal(\"User berhasil diupdate\");",
+              "err": {},
+              "uuid": "f16dc12b-f229-4ef4-be20-842b6a4caf8d",
+              "parentUUID": "699da985-041e-41e6-a117-be19c4090557",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed update-user",
+              "fullTitle": "update-user Failed update-user",
+              "timedOut": false,
+              "duration": 504,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken ()\nconst userId = \"a33a7900-a8b3-465f\"\nconst payload = {\n        \"name\": \"lulu\",\n        \"email\": \"lulu@example.com\"\n    }\n    \n\n// create user\nconst response = await updateUser(userId,token,payload)\n console.log((await  response).body);\nconsole.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(404);\nexpect((await response).body.message).to.equal(\"id tidak valid\");",
+              "err": {},
+              "uuid": "51e85fdb-36d6-4a87-9758-777686e1578d",
+              "parentUUID": "699da985-041e-41e6-a117-be19c4090557",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f16dc12b-f229-4ef4-be20-842b6a4caf8d",
+            "51e85fdb-36d6-4a87-9758-777686e1578d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "08ca2337-af7e-44c9-b5ed-2ed5a752750e",
+          "title": "get-user-detail",
+          "fullFile": "C:\\Users\\Triani_118217\\Documents\\Triani\\Sanber-47-API\\test\\suite\\user.suite.js",
+          "file": "\\test\\suite\\user.suite.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success get user detail",
+              "fullTitle": "get-user-detail Success get user detail",
+              "timedOut": false,
+              "duration": 510,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\nconst userId = \"a33a7900-a8b3-465f-89e3-e78fc0e30d60\"\n// create user\nconst response = await getUser(userId,token)\n//  console.log((await  response).body);\n//  console.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(200);\nexpect((await response).body.data.user.name).to.equal(\"lulu\");",
+              "err": {},
+              "uuid": "1a2a5310-0855-4ff9-8539-84578b0a8557",
+              "parentUUID": "08ca2337-af7e-44c9-b5ed-2ed5a752750e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed get-user-detail",
+              "fullTitle": "get-user-detail Failed get-user-detail",
+              "timedOut": false,
+              "duration": 606,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\nconst userId = \"a33a7900-a8b3\"\n// create user\nconst response = await getUser(userId,token)\n        //    console.log((await  response).body);\n        //   console.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(404);\nexpect((await response).body.message).to.equal(\"id tidak valid\");",
+              "err": {},
+              "uuid": "a54e853d-310a-4db7-8592-4849e0e6e2c8",
+              "parentUUID": "08ca2337-af7e-44c9-b5ed-2ed5a752750e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1a2a5310-0855-4ff9-8539-84578b0a8557",
+            "a54e853d-310a-4db7-8592-4849e0e6e2c8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1116,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "609f618b-dcb4-4077-83a7-134a62fbe18d",
+          "title": "get-user-list",
+          "fullFile": "C:\\Users\\Triani_118217\\Documents\\Triani\\Sanber-47-API\\test\\suite\\user.suite.js",
+          "file": "\\test\\suite\\user.suite.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success get user list",
+              "fullTitle": "get-user-list Success get user list",
+              "timedOut": false,
+              "duration": 488,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\n// create user\nconst response = await getAllUser(token)\n//  console.log((await  response).body);\n//  console.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(200);",
+              "err": {},
+              "uuid": "98a6c482-be03-4212-8886-41da1144fce3",
+              "parentUUID": "609f618b-dcb4-4077-83a7-134a62fbe18d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Invalid token get-user-list",
+              "fullTitle": "get-user-list Invalid token get-user-list",
+              "timedOut": false,
+              "duration": 555,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\n// create user\nconst response = await getUser(token)\n console.log((await  response).body);\nconsole.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(401);\nexpect((await response).body.message).to.equal(\"Invalid token structure\");",
+              "err": {},
+              "uuid": "abc5d361-76f0-4566-8c1e-ba02d33de4cc",
+              "parentUUID": "609f618b-dcb4-4077-83a7-134a62fbe18d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "98a6c482-be03-4212-8886-41da1144fce3",
+            "abc5d361-76f0-4566-8c1e-ba02d33de4cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1043,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "657dee36-3e24-4e23-8837-4565ed80cca2",
+          "title": "delete-user",
+          "fullFile": "C:\\Users\\Triani_118217\\Documents\\Triani\\Sanber-47-API\\test\\suite\\user.suite.js",
+          "file": "\\test\\suite\\user.suite.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Success delete user",
+              "fullTitle": "delete-user Success delete user",
+              "timedOut": false,
+              "duration": 475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// get token\nconst token = await getToken ()\nconst userId = \"aa081cd2-076b-4402-9767-2d571a13274b\"\n    \n\n// create user\nconst response = await deleteUser(userId,token)\n console.log((await  response).body);\nconsole.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(200);\nexpect((await response).body.message).to.equal(\"User berhasil dihapus\");",
+              "err": {},
+              "uuid": "e861bd8b-006a-41b2-ae45-e343a5b00981",
+              "parentUUID": "657dee36-3e24-4e23-8837-4565ed80cca2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Failed delete-user",
+              "fullTitle": "delete-user Failed delete-user",
+              "timedOut": false,
+              "duration": 550,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const token = await getToken ()\nconst userId = \"a33a7900-a8b3-465f\"\n      \n// create user\nconst response = await deleteUser(userId,token)\n console.log((await  response).body);\nconsole.log((await  response).status);\n \n//assert\nexpect((await response).status).to.equal(404);\nexpect((await response).body.message).to.equal(\"id tidak valid\");",
+              "err": {},
+              "uuid": "cbdd78ff-fae7-4f74-96c2-5e27463bb997",
+              "parentUUID": "657dee36-3e24-4e23-8837-4565ed80cca2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e861bd8b-006a-41b2-ae45-e343a5b00981",
+            "cbdd78ff-fae7-4f74-96c2-5e27463bb997"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1025,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
