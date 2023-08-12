@@ -1,30 +1,36 @@
 # API-Automation-Testing
 ## Built with
-'''
+
+```
 - Javascript
 - Supertest
 - Mocha
 - Chai
-'''
+```
 
 ## How to run
 - Clone repository
-'''
+  
+```
 ## https://github.com/triani16/API-Automation-Testing.git
-'''
+```
+
 - Install the project
-'''
+
+```
   1. supertest
     npm install supertest
   2. mocha
     npm install mocha
   3. chai
     npm install chai
-'''
+```
+
 - Run project
-'''
+
+```
 npx mocha test\suite\user.suite.js
-'''
+```
 
 ##Test results
 
